@@ -1,0 +1,19 @@
+@use './utils.module.scss' as utils;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&family=Urbanist:ital,wght@0,100;0,700;1,600&family=Bebas+Neue&family=Codystar&family=Londrina+Outline&display=swap&display=swap");
+
+@mixin fontStyle($fontSize, $lineHeight) {
+    font-size: utils.pxToRem($fontSize);
+    line-height: utils.pxToRem($lineHeight);
+}
+
+@mixin small {
+    @include fontStyle(16, 30);
+}
+
+@mixin medium {
+    @include fontStyle(24, 30);
+}
+
+@mixin large {
+    @include fontStyle(32, 40);
+}

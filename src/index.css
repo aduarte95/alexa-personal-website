@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Roboto Mono';
+  src: local('Roboto Mono'), url(./resources/fonts/RobotoMono-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(./resources/fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+:root {
+  font-family: 'Roboto Mono', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

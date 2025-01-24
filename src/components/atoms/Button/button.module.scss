@@ -1,0 +1,85 @@
+@use './../../../styles/utils.module.scss' as utils;
+@use '../../../styles/colors.module.scss' as colors;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&family=Urbanist:ital,wght@0,100;0,700;1,600&family=Bebas+Neue&family=Codystar&family=Londrina+Outline&display=swap&display=swap");
+
+/*$pimary-color: #ff8370;
+$primary-font: "Roboto Mono", monospace;
+$body-font: "Noto Sans KR", sans-serif;
+$secondary-color: #d1a9fa;
+$blue-green: #00b1b0;
+$coral: #ff8370;*/
+
+.button {
+    width: 100%;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 200;
+    letter-spacing: utils.pxToRem(1);
+    outline: 0;
+    border: utils.pxToRem(1) solid colors.$black;
+    position: relative;
+    font-size: utils.pxToRem(16);
+    padding: utils.pxToRem(15) utils.pxToRem(50) utils.pxToRem(15);
+    margin-top: 1rem;
+
+    &::after {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        transition: 0.2s;
+        content: "";
+        background-color: colors.$black;
+        z-index: -1;
+        left: utils.pxToRem(6);
+        top: utils.pxToRem(6);
+    }
+
+    &:hover:not(:disabled)::after{
+        top: 0;
+        left: 0;
+    }
+
+    &:focus:not(:disabled) {
+        outline-style: solid;
+        outline-width: utils.pxToRem(3);
+        outline-offset: utils.pxToRem(1);
+        
+        &::after{
+            top:0;
+            left:0
+        }
+    }
+    
+    &:disabled {
+        cursor: not-allowed;
+        color: colors.$disable;
+        background-color: colors.$light-gray;
+
+        &::after {
+            background-color: colors.$gray;
+        }
+    }
+
+    &--primary {
+        background-color: colors.$primary-color;
+
+        &:hover:not(:disabled) {
+            background-color: colors.$dark-purple;
+        }
+
+        &:focus:not(:disabled) {
+            outline-color: colors.$purple;
+        }
+    }
+
+    &--secondary {
+        background-color: colors.$secondary-color;
+
+        &:hover:not(:disabled) {
+            background-color: colors.$dark-coral;
+        }
+
+        &:focus:not(:disabled) {
+            outline-color: colors.$orange;
+        }
+    }
+}

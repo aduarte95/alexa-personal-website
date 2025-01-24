@@ -1,0 +1,18 @@
+@use './../../../styles/typekit.module.scss' as typekit;
+
+
+.text {
+    font-family: Roboto;
+
+    &--small {
+        @include typekit.small;
+    }
+
+    &--medium {
+        @include typekit.medium;
+    }
+
+    &--large {
+        @include typekit.large;
+    }
+}
